@@ -1,5 +1,7 @@
 # React Weather App
 
+![weather](./sample.png)
+
 Weather tile component template, I plan on adding additional features to make it more interactive, including using the weather api from https://openweathermap.org/
 
 Temperatures are RNG for now haha.

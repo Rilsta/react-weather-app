@@ -5,12 +5,13 @@ import sunny from '../sunny.svg';
 import mostlycloudy from '../mostlycloudy.svg';
 import rainy from '../rainy.svg';
 
+// this should be put in a helper file I think.
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
-  }
-
+}
+// Is there a way to loop through this and make a single Weathercard component without having to repeat myself?
 const App = props => (
     <div className="app_container"> 
         <WeatherCard 
