@@ -1,0 +1,6 @@
+
+General plan for weather react app
+
+index.js which calls and renders the App component
+    The App component, which will contain a WeatherCard component
+        A WeatherCard component which will contain WeekDay, Picture, and Temp components

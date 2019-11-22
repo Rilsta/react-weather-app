@@ -1,3 +1,11 @@
+# React Weather App
+
+Weather tile component template, I plan on adding additional features to make it more interactive, including using the weather api from https://openweathermap.org/
+
+Temperatures are RNG for now haha.
+
+Cool weather icons made by Dooder at https://www.iconfinder.com/dooder!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
