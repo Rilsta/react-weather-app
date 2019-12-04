@@ -40,11 +40,8 @@ class WeatherCard extends React.Component {
                     highTemp={this.props.highTemp}
                     lowTemp={this.props.lowTemp}
                 />
-                
-                {title}
-
                 {opened && (					
-					<div class="boxContent">
+					<div>
 						{children}
 					</div>
 				)}

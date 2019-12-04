@@ -12,6 +12,7 @@ function getRandomInt(min, max) {
 }
 
 const cards = weatherData.weekdays;
+const hours = weatherData.weekdays.hourly;
 const listDays = cards.map((card) =>
     <WeatherCard
         title="Show Hourly"
@@ -19,7 +20,11 @@ const listDays = cards.map((card) =>
         picture={card.picture}
         highTemp={getRandomInt(60, 90) + "°"}
         lowTemp={getRandomInt(30, 60) + "°"}>
-            <Hourly hourlyTemp={weatherData.weekdays[0].hourly} />
+            <Hourly hourlyTemp={
+                card.hourly.map((hour) =>
+                    hour.toString() + " "
+                )
+            } />
     </WeatherCard>
 );
 

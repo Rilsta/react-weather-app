@@ -12,7 +12,7 @@ class Hourly extends React.Component {
         return (
             <div className="hourly_container">
                 <ul>
-                    {this.props.hourlyTemp}
+                    <div className="list_hours">{this.props.hourlyTemp}</div>
                 </ul>
             </div>
         )
