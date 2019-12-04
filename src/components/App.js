@@ -1,9 +1,8 @@
 import React from "react";
 import WeatherCard from "./WeatherCard";
 import weatherData from '../weatherData';
-import sunny from '../sunny.svg';
-import mostlycloudy from '../mostlycloudy.svg';
-import rainy from '../rainy.svg';
+import Hourly from './Hourly'
+import Clock from "./Clock";
 
 // this should be put in a helper file I think.
 function getRandomInt(min, max) {
@@ -11,51 +10,26 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
+
+const cards = weatherData.weekdays;
+const listDays = cards.map((card) =>
+
+    <WeatherCard 
+        weekday={card.weekday}
+        picture={card.picture}
+        highTemp={getRandomInt(60, 90) + "°"}
+        lowTemp={getRandomInt(30, 60) + "°"}
+    />
+);
+
 // Is there a way to loop through this and make a single Weathercard component without having to repeat myself?
 const App = props => (
-    <div className="app_container"> 
-        <WeatherCard 
-            weekday={weatherData.weekdays[0]} 
-            picture={sunny}
-            highTemp={getRandomInt(60, 90) + "°"}
-            lowTemp={getRandomInt(30, 60) + "°"}
-        />
-        <WeatherCard 
-            weekday={weatherData.weekdays[1]} 
-            picture={mostlycloudy}
-            highTemp={getRandomInt(60, 90) + "°"}
-            lowTemp={getRandomInt(30, 60) + "°"}
-        />
-        <WeatherCard 
-            weekday={weatherData.weekdays[2]} 
-            picture={rainy}
-            highTemp={getRandomInt(60, 90) + "°"}
-            lowTemp={getRandomInt(30, 60) + "°"}
-        />
-        <WeatherCard 
-            weekday={weatherData.weekdays[3]} 
-            picture={rainy}
-            highTemp={getRandomInt(60, 90) + "°"}
-            lowTemp={getRandomInt(30, 60) + "°"}
-        />
-        <WeatherCard 
-            weekday={weatherData.weekdays[4]} 
-            picture={sunny}
-            highTemp={getRandomInt(60, 90) + "°"}
-            lowTemp={getRandomInt(30, 60) + "°"}
-        />
-        <WeatherCard 
-            weekday={weatherData.weekdays[5]} 
-            picture={mostlycloudy}
-            highTemp={getRandomInt(60, 90) + "°"}
-            lowTemp={getRandomInt(30, 60) + "°"}
-        />
-        <WeatherCard 
-            weekday={weatherData.weekdays[6]} 
-            picture={rainy}
-            highTemp={getRandomInt(60, 90) + "°"}
-            lowTemp={getRandomInt(30, 60) + "°"}
-        />
+    <div className="app_container">
+        <div className="derp">
+            {listDays}
+        </div>
+        <Hourly hourlyTemp={weatherData.weekdays[0].hourly}/>
+        <Clock />
     </div>
 )
 

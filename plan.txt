@@ -4,3 +4,19 @@ General plan for weather react app
 index.js which calls and renders the App component
     The App component, which will contain a WeatherCard component
         A WeatherCard component which will contain WeekDay, Picture, and Temp components
+
+
+
+
+
+PLAN FOR HOURLY WEATHER
+
+Click on individual day to display that day's data
+Close the individual day hourly box
+Click a seperate day and have it's data show
+Show 24 hours worth of weather
+Start at 0 hour (midnight)
+Show whole 24 hours
+Show in 24 hour time
+Show temperature for the specific hour in Fahrenheidt
+Show it listing from left to right
