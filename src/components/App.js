@@ -2,7 +2,7 @@ import React from "react";
 import WeatherCard from "./WeatherCard";
 import weatherData from '../weatherData';
 import Hourly from './Hourly'
-import Clock from "./Clock";
+// import Clock from "./Clock";
 
 // this should be put in a helper file I think.
 function getRandomInt(min, max) {
@@ -13,23 +13,21 @@ function getRandomInt(min, max) {
 
 const cards = weatherData.weekdays;
 const listDays = cards.map((card) =>
-
-    <WeatherCard 
+    <WeatherCard
+        title="Show Hourly"
         weekday={card.weekday}
         picture={card.picture}
         highTemp={getRandomInt(60, 90) + "°"}
-        lowTemp={getRandomInt(30, 60) + "°"}
-    />
+        lowTemp={getRandomInt(30, 60) + "°"}>
+            <Hourly hourlyTemp={weatherData.weekdays[0].hourly} />
+    </WeatherCard>
 );
 
-// Is there a way to loop through this and make a single Weathercard component without having to repeat myself?
 const App = props => (
     <div className="app_container">
-        <div className="derp">
+        <div className="list_days">
             {listDays}
         </div>
-        <Hourly hourlyTemp={weatherData.weekdays[0].hourly}/>
-        <Clock />
     </div>
 )
 

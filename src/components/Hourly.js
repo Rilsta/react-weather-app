@@ -1,11 +1,22 @@
 import React from 'react';
 
-const Hourly = (props) => (
-    <div className="hourly_container">
-        <ul>
-            {props.hourlyTemp}
-        </ul>
-    </div>
-)
+
+class Hourly extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            value: null
+        }
+    }
+    render() {
+        return (
+            <div className="hourly_container">
+                <ul>
+                    {this.props.hourlyTemp}
+                </ul>
+            </div>
+        )
+    }
+}
 
 export default Hourly;
